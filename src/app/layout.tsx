@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-	category: "FiveM Roleplay",
+	category: "Apartman Vrbice",
 	icons: [
 		{
 			rel: "shortcut icon",
