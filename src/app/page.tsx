@@ -36,7 +36,7 @@ export default function Home() {
 	if (!mounted) return null;
 
 	const toggleDropdown = () => {
-		setIsOpen((prev) => !prev);
+		setIsOpen(prev => !prev);
 	};
 
 	const changeLanguage = (lng: string) => {
@@ -44,12 +44,10 @@ export default function Home() {
 	};
 
 	return (
-		<div className={`${PoppinsSemiBold.className} flex min-h-screen flex-col items-center justify-center gap-16 px-6 text-white`}>
-			<motion.div
-				initial={{ opacity: 0, y: 30 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1 }}
-			>
+		<div
+			className={`${PoppinsSemiBold.className} flex min-h-screen flex-col items-center justify-center gap-16 px-6 text-white`}
+		>
+			<motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
 				<Image
 					src="/assets/logo.png"
 					alt="logo"
