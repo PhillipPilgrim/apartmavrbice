@@ -13,7 +13,7 @@ import {
 import "../../public/styles/globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://http://www.apartmavrbice.cz"),
+  metadataBase: new URL("https://www.apartmavrbice.cz"),
 	title: "Apartmán Vrbice",
 	description:
 		"Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost? Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem. Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!",
