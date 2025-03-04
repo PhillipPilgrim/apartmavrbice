@@ -12,6 +12,7 @@ import {
 } from "@/lib/fonts";
 import "../../public/styles/globals.css";
 import NavbarExport from "@/components/NavbarExport";
+import FooterExport from "@/components/FooterExport";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.apartmavrbice.cz"),
@@ -144,10 +145,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={` ${PoppinsThin.className} ${PoppinsExtraLight.className} ${PoppinsLight.className} ${PoppinsRegular.className} ${PoppinsMedium.className} ${PoppinsSemiBold.className} ${PoppinsBold.className} ${PoppinsExtraBold.className} ${PoppinsBlack.className} antialiased bg-[#ffffff]`}
+				className={` ${PoppinsThin.className} ${PoppinsExtraLight.className} ${PoppinsLight.className} ${PoppinsRegular.className} ${PoppinsMedium.className} ${PoppinsSemiBold.className} ${PoppinsBold.className} ${PoppinsExtraBold.className} ${PoppinsBlack.className} antialiased bg-[#f0f0f0]`}
 			>
 				<NavbarExport />
 				{children}
+				<FooterExport />
 			</body>
 		</html>
 	);
