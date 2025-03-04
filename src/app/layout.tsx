@@ -11,6 +11,7 @@ import {
 	PoppinsBlack,
 } from "@/lib/fonts";
 import "../../public/styles/globals.css";
+import NavbarExport from "@/components/NavbarExport";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.apartmavrbice.cz"),
@@ -145,6 +146,7 @@ export default function RootLayout({
 			<body
 				className={` ${PoppinsThin.className} ${PoppinsExtraLight.className} ${PoppinsLight.className} ${PoppinsRegular.className} ${PoppinsMedium.className} ${PoppinsSemiBold.className} ${PoppinsBold.className} ${PoppinsExtraBold.className} ${PoppinsBlack.className} antialiased bg-[#ffffff]`}
 			>
+				<NavbarExport />
 				{children}
 			</body>
 		</html>
