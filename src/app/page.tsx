@@ -45,138 +45,34 @@ export default function Home() {
 
 	return (
 		<div
-			className={`${PoppinsSemiBold.className} flex min-h-screen flex-col items-center justify-center gap-16 px-6 text-white`}
+			className={`${PoppinsSemiBold.className} flex min-h-screen flex-col items-center justify-center max-w-7xl mx-auto gap-16 px-6 text-black`}
 		>
-			<motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-				<Image
-					src="/assets/logo.png"
-					alt="logo"
-					width={400}
-					height={400}
-					priority={true}
-					className="h-auto w-auto md:h-auto md:w-auto"
-				/>
-			</motion.div>
-
-			{/* Grouping language-dependent animations inside one parent */}
-			<AnimatePresence mode="wait">
+			<div className="flex flex-row items-center gap-4">
 				<motion.div
-					key={`lang-${i18n.language}`}
-					initial={{ opacity: 0, y: -30 }}
+					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
-					exit={{ opacity: 0, y: -30 }}
-					transition={{ duration: 0.5, delay: 0.1 }}
-				>
-					<div className="text-center text-2xl md:text-4xl">{t("title")}</div>
-					<div className="mt-16 text-start">
-						<p className={`${PoppinsRegular.className} text-md md:text-lg`}>{t("desc")}</p>
-					</div>
-					<div className={`${PoppinsRegular.className} mt-4 flex flex-col items-start gap-6 md:flex-col`}>
-						<Link
-							href={`tel:${CISLO}`}
-							className="group flex items-center justify-center gap-2 transition-all duration-300 hover:scale-110"
-						>
-							<IoCallOutline
-								size={45}
-								className="rounded-full border-2 border-white p-2 text-white group-hover:border-[#e84435] group-hover:text-[#e84435]"
-							/>
-							<p className="text-center group-hover:text-[#e84435]">731 155 158</p>
-						</Link>
-						<Link
-							href={`mailto:${EMAIL}`}
-							className="group flex items-center justify-center gap-2 transition-all duration-300 hover:scale-110"
-						>
-							<IoMailOutline
-								size={45}
-								className="rounded-full border-2 border-white p-2 text-white group-hover:border-[#e84435] group-hover:text-[#e84435]"
-							/>
-							<p className="text-center group-hover:text-[#e84435]">apatrmavrbice@gmail.com</p>
-						</Link>
-						<Link
-							href="https://www.booking.com/hotel/cz/apartma-vrbice.cs.html"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="group flex items-center justify-center gap-2 transition-all duration-300 hover:scale-110"
-						>
-							<IoBookmarkOutline
-								size={45}
-								className="rounded-full border-2 border-white p-2 text-white group-hover:border-[#e84435] group-hover:text-[#e84435]"
-							/>
-							<p className="text-center group-hover:text-[#e84435]">{t("booking")}</p>
-						</Link>
-					</div>
-				</motion.div>
-			</AnimatePresence>
-
-			{/* Language dropdown remains outside the grouped animations */}
-			<motion.div
-				key="dropdown"
-				ref={dropdownRef}
-				className="absolute bottom-5 left-25 flex w-45 items-center justify-center rounded-xl bg-[#383838] px-2 hover:bg-zinc-800/80 md:bottom-6 md:left-20 md:w-48"
-			>
-				<span
-					onClick={toggleDropdown}
-					aria-expanded={isOpen}
-					className="flex cursor-pointer items-center px-4 py-2 font-[family-name:var(--font-coahce-regular)] text-sm font-bold text-white lg:text-base"
+					transition={{ duration: 1 }}
+					className="flex-rwo flex w-1/2 items-center gap-4"
 				>
 					<Image
-						src={"/assets/globe.png"}
+						src="/assets/logo-small.png"
+						alt="logo"
+						width={300}
+						height={300}
 						priority={true}
-						alt="Globe"
-						width={28}
-						height={28}
-						className="mr-1.5"
+						className="h-auto w-auto md:h-auto md:w-auto"
 					/>
-					<motion.p
-						key={`${i18n.language}-lng-trigger`}
-						initial={{ opacity: 0, scale: 0.7 }}
-						animate={{ opacity: 1, scale: 1 }}
-						exit={{ opacity: 0, scale: 0.7 }}
-						transition={{ duration: 0.5 }}
-					>
-						{t("lng")}
-					</motion.p>
-					<motion.div
-						animate={{ rotate: isOpen ? 180 : 0 }}
-						transition={{ duration: 0.3 }}
-						className="ml-1.5"
-					>
-						<IoArrowDown />
-					</motion.div>
-				</span>
-
-				<AnimatePresence>
-					{isOpen && (
-						<motion.div
-							key="language-switcher"
-							initial={{ opacity: 0, y: -10 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -10 }}
-							transition={{ duration: 0.5 }}
-							className="absolute bottom-full z-10 mb-2 w-full rounded-xl bg-[#383838] p-2 shadow-md"
-						>
-							<button
-								onClick={() => changeLanguage("cs")}
-								className="flex w-full cursor-pointer items-center justify-start gap-2 rounded-xl px-2 hover:bg-zinc-800/80"
-							>
-								<Image src={"/assets/czech-flag.png"} alt="Czech" width={35} height={35} />
-								<span className="rounded-xl px-4 py-2 font-[family-name:var(--font-coahce-regular)] text-sm lg:text-base">
-									Čeština
-								</span>
-							</button>
-							<button
-								onClick={() => changeLanguage("en_us")}
-								className="flex w-full cursor-pointer items-center justify-start gap-2 rounded-xl px-2 hover:bg-zinc-800/80"
-							>
-								<Image src={"/assets/english-flag.png"} alt="English" width={35} height={35} />
-								<span className="rounded-xl px-4 py-2 font-[family-name:var(--font-coahce-regular)] text-sm lg:text-base">
-									English
-								</span>
-							</button>
-						</motion.div>
-					)}
-				</AnimatePresence>
-			</motion.div>
+					<p className="text-center text-2xl md:text-7xl">Vrbice</p>
+				</motion.div>
+				<motion.div className="w-1/3">
+					<p className="text-center text-2xl md:text-2xl">Proč si vybrat náš Apartmán?</p>
+					<p className="text-md text-center">
+						Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost?
+						Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem.
+						Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!
+					</p>
+				</motion.div>
+			</div>
 		</div>
 	);
 }

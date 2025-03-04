@@ -143,7 +143,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={` ${PoppinsThin.className} ${PoppinsExtraLight.className} ${PoppinsLight.className} ${PoppinsRegular.className} ${PoppinsMedium.className} ${PoppinsSemiBold.className} ${PoppinsBold.className} ${PoppinsExtraBold.className} ${PoppinsBlack.className} antialiased bg-[#0a0a0a]`}
+				className={` ${PoppinsThin.className} ${PoppinsExtraLight.className} ${PoppinsLight.className} ${PoppinsRegular.className} ${PoppinsMedium.className} ${PoppinsSemiBold.className} ${PoppinsBold.className} ${PoppinsExtraBold.className} ${PoppinsBlack.className} antialiased bg-[#ffffff]`}
 			>
 				{children}
 			</body>
