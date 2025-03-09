@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { PoppinsSemiBold, PoppinsMedium, PoppinsRegular, PoppinsLight, PoppinsThin } from "@/lib/fonts";
-import { EMAIL, CISLO } from "@/utils/constant";
+import { useRef } from "react";
+import { PoppinsSemiBold, PoppinsRegular } from "@/lib/fonts";
+import { IoClose } from "react-icons/io5"
 import "@/i18n";
 
 import {
@@ -20,7 +20,7 @@ import {
 	IoMapSharp,
 } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
-import { AnimatePresence, motion, useScroll } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import "i18next";
 
@@ -35,7 +35,6 @@ export default function Home() {
 
 	return (
 		<div className={`${PoppinsRegular.className} text-black`}>
-			{/* Hero Section */}
 			<section className="relative flex min-h-screen w-full flex-col items-center justify-center">
 				<Image
 					src="/assets/pictures/background-1.jpeg"
@@ -72,7 +71,6 @@ export default function Home() {
 				</motion.div>
 			</section>
 
-			{/* About Section */}
 			<section
 				ref={aboutRef}
 				className={`${PoppinsRegular.className} md:0 mx-auto mt-12 flex min-h-screen w-full flex-col items-center justify-center gap-6 pr-0 md:flex-row md:pr-72`}
@@ -84,13 +82,17 @@ export default function Home() {
 					viewport={{ once: true }}
 					className="flex w-full flex-col px-4 md:w-1/2"
 				>
-					<p className={`${PoppinsSemiBold.className} text-center text-2xl text-[#e94629]`}>Proč si vybrat náš Apartmán?</p>
+					<p className={`${PoppinsSemiBold.className} text-center text-2xl text-[#e94629]`}>
+						Proč si vybrat náš Apartmán?
+					</p>
 					<p className="md:text-md mt-4 text-justify text-sm">
 						Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost?
 						Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem.
 						Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!
 					</p>
-					<p className={`${PoppinsSemiBold.className} mt-4 text-lg text-[#e94629]`}>Co vám Apartmá Vrbice nabízí:</p>
+					<p className={`${PoppinsSemiBold.className} mt-4 text-lg text-[#e94629]`}>
+						Co vám Apartmá Vrbice nabízí:
+					</p>
 					<motion.ul
 						initial={{ opacity: 0, x: 30 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +134,9 @@ export default function Home() {
 						transition={{ duration: 0.5, delay: 0.8 }}
 						viewport={{ once: true }}
 					>
-						<p className={`${PoppinsSemiBold.className} mt-4 text-lg text-[#e94629]`}>Proč zvolit Apartmá Vrbice:</p>
+						<p className={`${PoppinsSemiBold.className} mt-4 text-lg text-[#e94629]`}>
+							Proč zvolit Apartmá Vrbice:
+						</p>
 						<ul className="mt-2 items-start space-y-1 text-justify text-[14px]">
 							<li className="flex gap-2">
 								<IoAdd className="shrink-0 text-[#e94629]" />
@@ -172,6 +176,7 @@ export default function Home() {
 						</p>
 					</motion.div>
 				</motion.div>
+
 				<motion.div
 					initial={{ opacity: 0, x: 30 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -205,9 +210,8 @@ export default function Home() {
 				</motion.div>
 			</section>
 
-			{/* What You Can Do Section */}
 			<section
-				className={`${PoppinsRegular.className} w-full items-center justify-center gap-24 mt-24 px-4 pb-36 md:px-48`}
+				className={`${PoppinsRegular.className} mt-24 w-full items-center justify-center gap-24 px-4 pb-36 md:px-48`}
 			>
 				<p className={`${PoppinsSemiBold.className} text-center text-2xl`}>A co u nás lze dělat?</p>
 
@@ -386,6 +390,21 @@ export default function Home() {
 							</p>
 						</div>
 					</motion.div>
+				</div>
+			</section>
+			<section
+				className={`${PoppinsRegular.className} mt-24 w-full items-center justify-center gap-24 px-4 pb-36 md:px-48`}
+			>
+				<div>
+					<p className="text-center text-2xl text-[#e94629]">Jaké jsou další možnosti?</p>
+				</div>
+				<div className="mt-10 flex flex-row text-xl gap-12">
+					<p className="text-center text-[#e94629]">Elektrické koloběžky k zapůjčení</p>
+					<p className="text-center text-[#e94629]">Pedikůra možnost</p>
+					<p className="text-center text-[#e94629]">
+						Pro 10 a více lidí možnost gastronomického zážitku s profesionálním kuchařem
+					</p>
+					<p className="text-center text-[#e94629]">Možnost půjčení skůtru</p>
 				</div>
 			</section>
 		</div>

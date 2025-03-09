@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function FooterExport() {
 	return (
-		<footer className={`bg-[#f5f5f5] py-1 shadow-md ${PoppinsSemiBold.className}`}>
+		<footer className={`bg-[#f5f5f5] py-4 md:px-0 px-4 shadow-md ${PoppinsSemiBold.className}`}>
 			<div className="container mx-auto flex flex-col items-start justify-between gap-6 p-0 md:flex-row md:p-4">
 				<div className="flex-1">
 					<p className="text-md mb-2 font-semibold">Sledujte nás:</p>
