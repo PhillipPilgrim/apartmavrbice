@@ -2,14 +2,43 @@
 
 import { PoppinsSemiBold, PoppinsMedium, PoppinsRegular } from "@/lib/fonts";
 import { CISLO } from "@/utils/constant";
+import "@/i18n";
 
-import { IoCallOutline, IoBookmarkOutline } from "react-icons/io5";
+import { IoCallOutline } from "react-icons/io5";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { IoArrowDown, IoGlobeOutline } from "react-icons/io5";
+import { AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 export default function NavbarExport() {
 	const { scrollY } = useScroll();
 	const opacity = useTransform(scrollY, [0, 100], [1, 0]);
+
+	const dropdownRef = useRef<HTMLDivElement>(null);
+	const [isOpen, setIsOpen] = useState(false);
+	const { t, i18n } = useTranslation();
+
+	const handleClickOutside = (event: MouseEvent) => {
+		if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+			setIsOpen(false);
+		}
+	};
+
+	const toggleDropdown = () => setIsOpen(!isOpen);
+
+	useEffect(() => {
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
+
+	const changeLanguage = (lng: string) => {
+		i18n.changeLanguage(lng);
+	};
 
 	return (
 		<motion.nav
@@ -29,19 +58,59 @@ export default function NavbarExport() {
 					<span className="ml-2 text-lg">731 155 158</span>
 				</motion.a>
 
-				<motion.a
-					initial={{ opacity: 0, x: 30 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 120, damping: 10 }}
-					whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-					rel="noopener noreferrer"
-					target="_blank"
-					href="https://www.booking.com/hotel/cz/apartma-vrbice.cs.html"
-					className="flex items-center rounded-md text-[#e94629]"
-				>
-					<IoBookmarkOutline className="p-1 text-4xl" />
-					<span className="ml-2 text-lg">Rezervace</span>
-				</motion.a>
+				<div ref={dropdownRef} className="relative flex w-full items-center justify-center lg:w-auto">
+					<span
+						onClick={toggleDropdown}
+						aria-expanded={isOpen}
+						className="flex w-40 cursor-pointer items-center px-4 py-2 font-[family-name:var(--font-coahce-regular)] text-sm font-bold text-[#e94629] lg:text-base"
+					>
+						<div className="gap-1.5 flex items-center">
+							<IoGlobeOutline className="text-3xl" />
+							<p>{t("navbar.jazyk")}</p>
+						</div>
+						<motion.div
+							animate={{ rotate: isOpen ? 180 : 0 }}
+							transition={{ duration: 0.3 }}
+							className="ml-1.5"
+						>
+							<IoArrowDown />
+						</motion.div>
+					</span>
+
+					<AnimatePresence>
+						{isOpen && (
+							<motion.div
+								initial={{ opacity: 0, y: -10 }}
+								animate={{ opacity: 1, y: 0 }}
+								exit={{ opacity: 0, y: -10 }}
+								transition={{ duration: 0.2 }}
+								className="absolute top-full z-10 mb-2 w-full bg-zinc-300/20 p-2 rounded-xl text-black shadow-md"
+							>
+								<button
+									onClick={() => changeLanguage("cs")}
+									className="flex items-center justify-start gap-2 hover:scale-105 transition-all duration-300 cursor-pointer"
+								>
+									<Image src={"/assets/czech-flag.png"} alt="Czech" width={35} height={35} className="opacity-80" />
+
+									<span className="rounded-xl px-4 py-2 font-[family-name:var(--font-coahce-regular)] hover:text-[#e94629]  text-sm lg:text-base">
+										{t("navbar.cz")}
+									</span>
+								</button>
+
+								<button
+									onClick={() => changeLanguage("en_us")}
+									className="flex items-center justify-start gap-2 hover:scale-105 transition-all duration-300 cursor-pointer"
+								>
+									<Image src={"/assets/english-flag.png"} alt="English" width={35} height={35} className="opacity-80" />
+
+									<span className="rounded-xl px-4 py-2 font-[family-name:var(--font-coahce-regular)] hover:text-[#e94629]  text-sm lg:text-base">
+										{t("navbar.en")}
+									</span>
+								</button>
+							</motion.div>
+						)}
+					</AnimatePresence>
+				</div>
 
 				<motion.div
 					initial={{ opacity: 0, y: -30 }}
@@ -54,7 +123,7 @@ export default function NavbarExport() {
 							href="/apartmany"
 							className="text-white underline-offset-3 transition-all duration-300 hover:scale-110 hover:text-[#e94629] hover:underline"
 						>
-							<span>Apartmány</span>
+							<span>{t("navbar.home")}</span>
 						</a>
 						<a
 							href="/"
@@ -69,10 +138,12 @@ export default function NavbarExport() {
 							/>
 						</a>
 						<a
-							href="/kontakt"
+							href="https://www.booking.com/hotel/cz/apartma-vrbice.cs.html"
+							target="_blank"
+							rel="noreferrer noopener"
 							className="text-white underline-offset-3 transition-all duration-300 hover:scale-110 hover:text-[#e94629] hover:underline"
 						>
-							<span>Kontakt</span>
+							{t("navbar.rezervace")}
 						</a>
 					</div>
 				</motion.div>

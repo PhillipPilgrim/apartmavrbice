@@ -2,15 +2,21 @@
 
 import { PoppinsSemiBold, PoppinsMedium } from "@/lib/fonts";
 import { EMAIL, CISLO } from "@/utils/constant";
+
 import { IoLogoFacebook, IoBookmarks } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import i18n from "@/i18n";
 
 export default function FooterExport() {
+
+	  const { t } = useTranslation();
+
 	return (
 		<footer className={`bg-[#f5f5f5] py-4 md:px-0 px-4 shadow-md ${PoppinsSemiBold.className}`}>
 			<div className="container mx-auto flex flex-col items-start justify-between gap-6 p-0 md:flex-row md:p-4">
 				<div className="flex-1">
-					<p className="text-md mb-2 font-semibold">Sledujte nás:</p>
+					<p className="text-md mb-2 font-semibold">{t("footer.watch")}</p>
 					<div className="flex flex-col gap-2">
 						<a
 							href="https://www.facebook.com/profile.php?id=61558579918001"
@@ -38,13 +44,13 @@ export default function FooterExport() {
 							rel="noopener noreferrer"
 							className="text-md transition-all hover:scale-105 hover:text-[#e94629]"
 						>
-							© 2025 Vytvořil Filip Musálek
+							{t("footer.made")}
 						</a>
 					</div>
 				</div>
 
 				<div className="flex-1">
-					<p className="text-md mb-2 font-semibold">Kontakt:</p>
+					<p className="text-md mb-2 font-semibold">{t("footer.kontakt")}</p>
 					<div className="flex flex-col gap-1">
 						<a
 							href={`mailto:${EMAIL}`}
@@ -61,7 +67,7 @@ export default function FooterExport() {
 				</div>
 
 				<div className="flex-1">
-					<p className="text-md mb-2 font-semibold">Partneři:</p>
+					<p className="text-md mb-2 font-semibold">{t("footer.partners")}</p>
 					<div className="flex flex-wrap gap-4">
 						<a href="https://example.com" target="_blank" rel="noopener noreferrer">
 							<Image
