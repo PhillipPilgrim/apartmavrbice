@@ -23,6 +23,7 @@ const cs = {
 			"Vlastní kuchyňka – Ideální pro přípravu jídel během vašeho pobytu.",
 			"Wi‑Fi zdarma – Zůstaňte online pro práci nebo zábavu.",
 			"Blízko přírody – Skvělý výchozí bod pro výlety a relaxaci.",
+			"Zábava - U nás je i možnost pronajmout si skůtr, paddleboard nebo elektrickou koloběžku.",
 		],
 		whyTitle: "Proč zvolit Apartmá Vrbice:",
 		reasons: [

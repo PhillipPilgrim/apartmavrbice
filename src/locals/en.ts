@@ -23,6 +23,7 @@ const en = {
 			"Own kitchenette – Ideal for preparing meals during your stay.",
 			"Free Wi‑Fi – Stay online for work or entertainment.",
 			"Close to nature – A great starting point for trips and relaxation.",
+			"Entertainment - You can rent a scooter, paddleboard or electric kick scooter."
 		],
 		whyTitle: "Why Choose Apartments Vrbice:",
 		reasons: [
