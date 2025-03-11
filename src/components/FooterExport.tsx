@@ -6,7 +6,6 @@ import { EMAIL, CISLO } from "@/utils/constant";
 import { IoLogoFacebook, IoBookmarks } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import i18n from "@/i18n";
 
 export default function FooterExport() {
 

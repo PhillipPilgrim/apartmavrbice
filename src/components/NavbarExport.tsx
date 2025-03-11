@@ -1,8 +1,8 @@
 "use client";
 
-import { PoppinsSemiBold, PoppinsMedium, PoppinsRegular } from "@/lib/fonts";
+import { PoppinsMedium} from "@/lib/fonts";
 import { CISLO } from "@/utils/constant";
-import "@/i18n";
+import "@/utils/i18n";
 
 import { IoCallOutline } from "react-icons/io5";
 import { motion, useScroll, useTransform } from "motion/react";
