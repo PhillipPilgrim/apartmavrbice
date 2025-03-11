@@ -1,13 +1,21 @@
-import { initReactI18next } from 'react-i18next';
-import i18n from 'i18next';
+import LanguageDetector from "i18next-browser-languagedetector";
+import { initReactI18next } from "react-i18next";
+import i18n from "i18next";
 
-import en from '../locals/en';
-import cs from '../locals/cs';
+import en from "../locals/en";
+import cs from "../locals/cs";
 
 const isServer = typeof window === "undefined";
-const detectionOptions = { order: isServer ? [] : ["cookie", "localStorage", "navigator"], caches: isServer ? [] : ["cookie"] };
+const detectionOptions = {
+	order: isServer ? [] : ["cookie", "localStorage", "navigator"],
+	caches: isServer ? [] : ["cookie"],
+};
 
-i18n.use(initReactI18next)
+i18n.use(initReactI18next);
+
+if (!isServer) {
+	i18n.use(LanguageDetector);
+}
 
 i18n.init({
 	resources: {
@@ -24,4 +32,3 @@ i18n.init({
 });
 
 export default i18n;
-
