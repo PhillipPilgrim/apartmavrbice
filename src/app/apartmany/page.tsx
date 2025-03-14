@@ -261,7 +261,7 @@ export default function Apartmany() {
           </div>
         </section>
 
-        <section className="flex w-full flex-col items-center justify-center gap-12 lg:flex-row lg:items-start">
+        <section className="flex w-full flex-col items-center justify-center gap-6 lg:flex-row lg:items-start">
           {/* Apartmán s 1 ložnicí */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
