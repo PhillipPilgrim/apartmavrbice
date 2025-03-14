@@ -267,7 +267,7 @@ export default function Apartmany() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex w-full flex-col items-center justify-center rounded-md bg-zinc-300/85 p-4 sm:w-[400px]"
+            className="flex w-full flex-col rounded-md bg-zinc-300/85 p-4 sm:w-[400px]"
           >
             <div className="relative transition-all duration-300 hover:scale-105">
               <Image
@@ -280,10 +280,10 @@ export default function Apartmany() {
               />
               <IoAlbums
                 size={40}
-                className="absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 p-2 text-[#e94629]"
+                className="absolute top-4 left-4 flex h-12 w-12 rounded-full bg-black/30 p-2 text-[#e94629]"
               />
             </div>
-            <div className="mt-4 flex flex-col justify-center">
+            <div className="mt-4 flex flex-col">
               <div className="flex items-center justify-center">
                 <h1 className={`${PoppinsSemiBold.className} mb-6 text-2xl text-[#e94629] xl:text-3xl`}>
                   {t("apartments.oneBedroom.title")}

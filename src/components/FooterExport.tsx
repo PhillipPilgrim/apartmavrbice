@@ -77,7 +77,7 @@ export default function FooterExport() {
         <div className="flex-1">
           <p className="text-md mb-2 font-semibold">{t("footer.partners")}</p>
           <div className="flex flex-wrap gap-4">
-            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.ostrava.cz/cs" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/assets/ostrava!!!.png"
                 alt="Logo partnera"
@@ -86,7 +86,7 @@ export default function FooterExport() {
                 className="cursor-pointer transition-transform hover:scale-105"
               />
             </a>
-            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.kudyznudy.cz/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/assets/kudyznudy.png"
                 alt="Logo partnera"
@@ -95,9 +95,18 @@ export default function FooterExport() {
                 className="cursor-pointer transition-transform hover:scale-105"
               />
             </a>
-            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.tesinskeslezsko.cz/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/assets/tesinskeslzesko.png"
+                alt="Logo partnera"
+                width={120}
+                height={120}
+                className="cursor-pointer transition-transform hover:scale-105"
+              />
+            </a>
+            <a href="https://www.navsi.cz/aktualne/aktuality/slevove-karty-tesinske-slezsko-region-card-2024-1585cs.html" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/assets/tesinskekarta.png"
                 alt="Logo partnera"
                 width={120}
                 height={120}
