@@ -13,13 +13,14 @@ import { AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 export default function NavbarExport() {
-	const [mounted, setMounted] = useState(false);
-	const { scrollY } = useScroll();
-	const opacity = useTransform(scrollY, [0, 100], [1, 0]);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const [mounted, setMounted] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const { t, i18n } = useTranslation();
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+	const { scrollY } = useScroll();
+	const opacity = useTransform(scrollY, [0, 100], [1, 0]);
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(prev => !prev);
@@ -51,7 +52,6 @@ export default function NavbarExport() {
 
 	return (
 		<>
-			{/* Desktop Navbar */}
 			<motion.nav
 				style={{ opacity }}
 				className={`fixed top-0 left-0 z-20 hidden w-full px-16 py-4 lg:block ${PoppinsMedium.className}`}
@@ -70,7 +70,10 @@ export default function NavbarExport() {
 					</motion.a>
 
 					<div ref={dropdownRef} className="relative flex w-full items-center justify-center lg:w-auto">
-						<span
+						<motion.span
+							initial={{ opacity: 0, x: 30 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.5, delay: 0.4 }}
 							onClick={toggleDropdown}
 							aria-expanded={isOpen}
 							className="flex w-40 cursor-pointer items-center px-4 py-2 font-[family-name:var(--font-coahce-regular)] text-sm font-bold text-[#e94629] lg:text-base"
@@ -86,7 +89,7 @@ export default function NavbarExport() {
 							>
 								<IoArrowDown />
 							</motion.div>
-						</span>
+						</motion.span>
 
 						<AnimatePresence>
 							{isOpen && (
@@ -171,133 +174,136 @@ export default function NavbarExport() {
 				</div>
 			</motion.nav>
 
-			{/* Mobile Navbar Toggle Button */}
 			<motion.nav style={{ opacity }} className="fixed top-0 left-0 z-20 w-full px-4 py-4 lg:hidden">
-				<button
+				<motion.button
+					initial={{ opacity: 0, x: 30 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ duration: 0.5, delay: 0.4 }}
 					onClick={toggleMobileMenu}
 					aria-label="Open Mobile Menu"
 					className={`fixed top-3 right-1 z-20 px-4 py-4 lg:hidden ${isMobileMenuOpen ? "hidden" : ""}`}
 				>
 					<IoMenu className="text-[#e94629]" size={30} />
-				</button>
+				</motion.button>
 
-				{/* Language Selector */}
-				<Link href="/" className={`flex items-center gap-2 ${isMobileMenuOpen ? "hidden" : ""}`}>
-					<Image src="/assets/logo.png" alt="Logo" width={200} height={200} />
-				</Link>
+				<motion.div
+					initial={{ opacity: 0, x: -30 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ duration: 0.5, delay: 0.4 }}
+				>
+					<Link href="/" className={`flex items-center gap-2 ${isMobileMenuOpen ? "hidden" : ""}`}>
+						<Image src="/assets/logo.png" alt="Logo" width={200} height={200} />
+					</Link>
+				</motion.div>
 			</motion.nav>
 
-			{/* Mobile Menu */}
 			<AnimatePresence>
-  {isMobileMenuOpen && (
-    <motion.div
-      initial={{ opacity: 0, y: "-100%" }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: "-100%" }}
-      transition={{ duration: 0.3 }}
-      className="bg-primary-background fixed inset-x-0 top-0 z-50 h-screen w-full bg-black/90"
-    >
-      <div className="flex h-full flex-col px-4 py-6">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex flex-row items-center gap-2">
-            <Image src="/assets/logo.png" alt="Logo" width={200} height={200} />
-          </Link>
+				{isMobileMenuOpen && (
+					<motion.div
+						initial={{ opacity: 0, y: "-100%" }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: "-100%" }}
+						transition={{ duration: 0.3 }}
+						className="bg-primary-background fixed inset-x-0 top-0 z-50 h-screen w-full bg-black/90"
+					>
+						<div className="flex h-full flex-col px-4 py-6">
+							<div className="flex items-center justify-between">
+								<Link href="/" className="flex flex-row items-center gap-2">
+									<Image src="/assets/logo.png" alt="Logo" width={200} height={200} />
+								</Link>
 
-          <button onClick={toggleMobileMenu}>
-            <IoClose className="absolute top-8 right-4 text-white" size={36} />
-            <span className="sr-only">Close Menu</span>
-          </button>
-        </div>
+								<button onClick={toggleMobileMenu}>
+									<IoClose className="absolute top-8 right-4 text-white" size={36} />
+									<span className="sr-only">Close Menu</span>
+								</button>
+							</div>
 
-        <div className="mt-10">
-          <div className="flex flex-col gap-4">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Link
-                href="/apartmany"
-                className="mb-1.5 font-[family-name:var(--font-generalsans-medium)] text-2xl text-white uppercase transition-transform duration-300 focus:scale-110"
-                onClick={toggleMobileMenu}
-              >
-                {t("navbar.home")}
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <Link
-                href="https://www.booking.com/hotel/cz/apartma-vrbice.cs.html"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="mb-1.5 font-[family-name:var(--font-generalsans-medium)] text-2xl text-white uppercase transition-transform duration-300 focus:scale-110"
-                onClick={toggleMobileMenu}
-              >
-                {t("navbar.rezervace")}
-              </Link>
-            </motion.div>
-          </div>
-        </div>
+							<div className="mt-10">
+								<div className="flex flex-col gap-4">
+									<motion.div
+										initial={{ opacity: 0, x: -30 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.5, delay: 0.2 }}
+									>
+										<Link
+											href="/apartmany"
+											className="mb-1.5 font-[family-name:var(--font-generalsans-medium)] text-2xl text-white uppercase transition-transform duration-300 focus:scale-110"
+											onClick={toggleMobileMenu}
+										>
+											{t("navbar.home")}
+										</Link>
+									</motion.div>
+									<motion.div
+										initial={{ opacity: 0, x: -30 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.5, delay: 0.5 }}
+									>
+										<Link
+											href="https://www.booking.com/hotel/cz/apartma-vrbice.cs.html"
+											rel="noreferrer noopener"
+											target="_blank"
+											className="mb-1.5 font-[family-name:var(--font-generalsans-medium)] text-2xl text-white uppercase transition-transform duration-300 focus:scale-110"
+											onClick={toggleMobileMenu}
+										>
+											{t("navbar.rezervace")}
+										</Link>
+									</motion.div>
+								</div>
+							</div>
 
-        {/* Obalový kontejner pro jazykové ikonky a tlačítko s telefonem */}
-        <div className="mt-auto flex flex-col">
-          <div className="flex flex-row justify-between">
-            <motion.button
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              onClick={() => changeLanguage("cs")}
-              className="flex cursor-pointer items-center justify-start gap-2 duration-300 focus:scale-125"
-            >
-              <Image
-                src={"/assets/czech-flag.png"}
-                alt="Czech"
-                width={55}
-                height={55}
-                className="opacity-80"
-              />
-            </motion.button>
+							<div className="mt-auto flex flex-col">
+								<div className="flex flex-row justify-between">
+									<motion.button
+										initial={{ opacity: 0, x: -30 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.5, delay: 0.7 }}
+										onClick={() => changeLanguage("cs")}
+										className="flex cursor-pointer items-center justify-start gap-2 transition-none focus:duration-300 focus:transition-transform focus:scale-115"
+									>
+										<Image
+											src={"/assets/czech-flag.png"}
+											alt="Czech"
+											width={55}
+											height={55}
+											className="opacity-80"
+										/>
+									</motion.button>
 
-            <motion.button
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              onClick={() => changeLanguage("en_us")}
-              className="flex cursor-pointer items-center justify-start gap-2 duration-300 focus:scale-125"
-            >
-              <Image
-                src={"/assets/english-flag.png"}
-                alt="English"
-                width={55}
-                height={55}
-                className="opacity-80"
-              />
-            </motion.button>
-          </div>
+									<motion.button
+										initial={{ opacity: 0, x: 30 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.5, delay: 0.7 }}
+										onClick={() => changeLanguage("en_us")}
+										className="flex cursor-pointer items-center justify-start gap-2 transition-none focus:duration-300 focus:transition-transform focus:scale-115"
+									>
+										<Image
+											src={"/assets/english-flag.png"}
+											alt="English"
+											width={55}
+											height={55}
+											className="opacity-80"
+										/>
+									</motion.button>
+								</div>
 
-          {/* Telefonní tlačítko, posunuté mírně dolů */}
-          <div className="mx-auto mt-4 w-full">
-            <motion.a
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-              href={`tel:${CISLO}`}
-              className="flex w-full items-center justify-center rounded-lg border-2 border-[#e94629] bg-black/70 p-1 text-[#e94629] focus:scale-110"
-            >
-              <IoCallOutline className="p-1 text-4xl" />
-              <span className="ml-2 text-lg">731 155 158</span>
-            </motion.a>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-
+								<div className="mx-auto mt-4 w-full">
+									<motion.a
+										initial={{ opacity: 0, y: 30 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{ duration: 0.5, delay: 1 }}
+										whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+										href={`tel:${CISLO}`}
+										className="flex w-full items-center justify-center rounded-lg border-2 border-[#e94629] bg-black/70 p-1 text-[#e94629] transition-none focus:duration-300 focus:transition-transform focus:scale-110"
+									>
+										<IoCallOutline className="p-1 text-4xl" />
+										<span className="ml-2 text-lg">731 155 158</span>
+									</motion.a>
+								</div>
+							</div>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</>
 	);
 }
