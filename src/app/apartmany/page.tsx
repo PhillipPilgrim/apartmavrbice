@@ -84,7 +84,7 @@ export default function Apartmany() {
   const oneBedroomImages = [
     "/assets/pictures/image-5.jpg",
     "/assets/pictures/image-6.jpg",
-    "/assets/pictures/image-7.jpg",
+    "/assets/pictures/image-7.jpeg",
     "/assets/pictures/image-8.jpg",
   ];
   const deluxeImages = [
@@ -272,7 +272,7 @@ export default function Apartmany() {
             <div className="relative transition-all duration-300 hover:scale-105">
               <Image
                 onClick={() => setActiveSlideshow("oneBedroom")}
-                src="/assets/pictures/image-7.jpg"
+                src="/assets/pictures/image-7.jpeg"
                 alt="apartmany"
                 width={400}
                 height={400}

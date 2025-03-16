@@ -16,25 +16,25 @@ import FooterExport from "@/components/FooterExport";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.apartmavrbice.cz"),
-	title: "Apartma Vrbice",
+	title: "Apartmá Vrbice",
 	description:
 		"Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost? Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem. Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!",
-	applicationName: "Apartma Vrbice",
+	applicationName: "Apartmá Vrbice",
 	keywords: ["apartman vrbice", "apartma", "vrbice", "ostrava apartma", "apartmán", "pronájem apartmánu ostrava"],
 	generator: "Next.js",
 	twitter: {
 		card: "summary",
-		title: "Apartma Vrbice",
+		title: "Apartmá Vrbice",
 		description:
 			"Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost? Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem. Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!",
 		images: `/assets/logo.png`,
 	},
 	appleWebApp: {
-		title: "Apartma Vrbice",
+		title: "Apartmá Vrbice",
 		statusBarStyle: "black-translucent",
 	},
 	openGraph: {
-		title: "Apartma Vrbice",
+		title: "Apartmá Vrbice",
 		description:
 			"Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost? Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem. Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!",
 		type: "website",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-	category: "Apartma Vrbice",
+	category: "Apartmá Vrbice",
 	icons: [
 		{
 			rel: "shortcut icon",
