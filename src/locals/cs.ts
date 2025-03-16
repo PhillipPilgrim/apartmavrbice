@@ -12,7 +12,7 @@ const cs = {
 		scroll: "Posuň dolů",
 	},
 	about: {
-		title: "Proč si vybrat náš Apartmán?",
+		title: "Proč si vybrat naše Apartmá?",
 		description:
 			"Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost? Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem. Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!",
 		offersTitle: "Co vám Apartmá Vrbice nabízí:",
@@ -25,7 +25,7 @@ const cs = {
 			"Blízko přírody – Skvělý výchozí bod pro výlety a relaxaci.",
 			"Zábava - U nás je i možnost pronajmout si skůtr, paddleboard nebo elektrickou koloběžku.",
 		],
-		whyTitle: "Proč zvolit Apartmá Vrbice:",
+		whyTitle: "Proč zvolit Apartma Vrbice:",
 		reasons: [
 			"Strategická poloha – Perfektní spojení mezi Ostravou a Bohumínem, s rychlým přístupem na dálnici.",
 			"Snadné parkování – Pohodlné parkování přímo u apartmánu.",
@@ -90,7 +90,7 @@ const cs = {
 			"<p><strong>Všechny ubytovací jednotky mají posezení</strong> s rozkládací pohovkou, TV s plochou obrazovkou s kabelovými programy, kuchyň s dobrým vybavením a jídelní částí a vlastní koupelnu s bezplatnými toaletními potřebami. <strong>K dispozici je také lednice, trouba, mikrovlnná trouba a varná konvice.</strong></p>" +
 			"<p>Národní kulturní památka Dolní oblast Vítkovice se nachází 13 km od ubytování Apartmá Vrbice a ZOO Ostrava 8,1 km. <strong>Letiště Leoše Janáčka Ostrava leží 29 km daleko.</strong></p>",
 		oneBedroom: {
-			title: "Apartmán s 1 ložnicí",
+			title: "Apartmá s 1 ložnicí",
 			description: "Nabízíme ubytování v krásných apartmánech v klidné části Bohumína.",
 			features: [
 				"Ložnice: 2 jednolůžkové postele",
@@ -103,7 +103,7 @@ const cs = {
 			title: "Vybavení apartmánů",
 		},
 		deluxe: {
-			title: "Apartmán Deluxe",
+			title: "Apartmá Deluxe",
 			description: "Nabízíme ubytování v krásných apartmánech v klidné části Bohumína.",
 			features: [
 				"Obývací pokoj: Rozkládací pohovka",
