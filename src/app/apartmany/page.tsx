@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { PoppinsSemiBold, PoppinsRegular, PoppinsMedium } from "@/lib/fonts";
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
+import Image from "next/image";
 import {
   IoClose,
   IoChevronBack,
@@ -15,9 +16,11 @@ import {
   IoLogoNoSmoking,
   IoAlbums,
 } from "react-icons/io5";
-import Image from "next/image";
-import { motion } from "motion/react";
+
+import { PoppinsSemiBold, PoppinsRegular, PoppinsMedium } from "@/lib/fonts";
 import { CISLO } from "@/utils/constant";
+
+
 
 interface SlideshowModalProps {
   images: string[];
@@ -71,11 +74,9 @@ function SlideshowModal({ images, onClose }: SlideshowModalProps) {
 }
 
 export default function Apartmany() {
-  // Always call hooks at the top level
   const { t } = useTranslation();
   const [activeSlideshow, setActiveSlideshow] = useState<string | null>(null);
 
-  // Client mount flag
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -94,9 +95,10 @@ export default function Apartmany() {
     "/assets/pictures/image-1.jpg",
   ];
   const vPripravImages = [
-    "/assets/pictures/vpriprav-1.jpg",
-    "/assets/pictures/vpriprav-2.jpg",
-    "/assets/pictures/vpriprav-3.jpg",
+    "/assets/pictures/image-9.jpg",
+    "/assets/pictures/image-10.jpg",
+    "/assets/pictures/image-11.jpg",
+    "/assets/pictures/image-12.jpg",
   ];
 
   let modalImages: string[] = [];
@@ -108,7 +110,6 @@ export default function Apartmany() {
     modalImages = vPripravImages;
   }
 
-  // Render nothing until mounted to ensure consistency between SSR and client
   if (!mounted) return null;
 
   return (
@@ -188,7 +189,6 @@ export default function Apartmany() {
               </div>
             </div>
 
-            {/* Tooltips for larger screens */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -272,7 +272,7 @@ export default function Apartmany() {
             <div className="relative transition-all duration-300 hover:scale-105">
               <Image
                 onClick={() => setActiveSlideshow("oneBedroom")}
-                src="/assets/pictures/image-7.jpeg"
+                src="/assets/pictures/image-5.jpg"
                 alt="apartmany"
                 width={400}
                 height={400}
@@ -307,13 +307,13 @@ export default function Apartmany() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="flex w-full flex-col items-center justify-center rounded-md bg-zinc-300/85 p-4 sm:w-[400px]"
           >
             <div className="relative transition-all duration-300 hover:scale-105">
               <Image
                 onClick={() => setActiveSlideshow("deluxe")}
-                src="/assets/pictures/image-4.jpg"
+                src="/assets/pictures/image-2.jpg"
                 alt="apartmany"
                 width={400}
                 height={400}
@@ -344,7 +344,7 @@ export default function Apartmany() {
             </div>
           </motion.div>
 
-          {/* V přípravě */}
+          {/* Apartmá Premium */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -354,7 +354,7 @@ export default function Apartmany() {
             <div className="relative transition-all duration-300 hover:scale-105">
               <Image
                 onClick={() => setActiveSlideshow("vpriprav")}
-                src="/assets/pictures/image-8.jpg"
+                src="/assets/pictures/image-11.jpg"
                 alt="apartmany"
                 width={400}
                 height={400}
@@ -392,7 +392,7 @@ export default function Apartmany() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col items-center justify-center gap-8 rounded-md bg-zinc-300/85 p-4"
+              className="flex flex-col items-center justify-center gap-8 rounded-md bg-zinc-300/85 p-3"
             >
               <div className="flex flex-col items-start justify-center">
                 <h1 className={`${PoppinsSemiBold.className} mb-6 text-3xl text-[#e94629]`}>

@@ -1,7 +1,7 @@
 "use client";
 
 import { IoLogoFacebook, IoBookmarks } from "react-icons/io5";
-import { EMAIL, CISLO } from "@/utils/constant";
+import { EMAIL, CISLO, CISLO2 } from "@/utils/constant";
 import { useTranslation } from "react-i18next";
 import { PoppinsSemiBold } from "@/lib/fonts";
 import { useState, useEffect } from "react";
@@ -65,6 +65,9 @@ export default function FooterExport() {
 						</a>
 						<a href={`tel:${CISLO}`} className="text-md text-zinc-800 transition-all hover:text-[#e94629]">
 							• {CISLO}
+						</a>
+						<a href={`tel:${CISLO2}`} className="text-md text-zinc-800 transition-all hover:text-[#e94629]">
+						• {CISLO2}
 						</a>
 						<p className="text-md text-zinc-800"> • Ostravská 83, Bohumín, Vrbice</p>
 						<p className="text-md text-zinc-800"> • Ban.účet 1761182042/3030</p>

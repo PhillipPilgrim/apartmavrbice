@@ -1,13 +1,13 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
 import { PoppinsSemiBold, PoppinsRegular } from "@/lib/fonts";
+import { useRef, useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
+import Image from "next/image";
 import "@/utils/i18n";
 
 import {
-  IoStar,
-  IoStarHalf,
-  IoStarOutline,
   IoArrowDown,
   IoAdd,
   IoCheckmark,
@@ -18,21 +18,16 @@ import {
   IoStorefrontOutline,
   IoMapSharp,
 } from "react-icons/io5";
-import { useTranslation } from "react-i18next";
-import { motion } from "motion/react";
-import Image from "next/image";
 
 export default function Home() {
   const { t } = useTranslation();
   const aboutRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
-  // Set mounted true only on client side
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Ensure that the component renders only on the client
   if (!mounted) return null;
 
   const scrollToAbout = () => {
@@ -43,7 +38,6 @@ export default function Home() {
 
   return (
     <div className={`${PoppinsRegular.className} text-black`}>
-      {/* Banner Section */}
       <section className="relative flex min-h-screen w-full flex-col items-center justify-center">
         <Image
           src="/assets/pictures/background-1.jpeg"
@@ -60,7 +54,7 @@ export default function Home() {
             className="flex items-center gap-4"
           >
             <p
-              className={`text-center text-2xl text-white md:text-5xl lg:text-7xl ${PoppinsSemiBold.className}`}
+              className={`text-center text-3xl text-white md:text-5xl lg:text-7xl ${PoppinsSemiBold.className}`}
             >
               {t("banner.title")}
             </p>
@@ -82,7 +76,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About Section */}
       <section
         ref={aboutRef}
         className="mx-auto mt-12 flex min-h-screen w-full flex-col items-center justify-center gap-6 px-6 md:flex-row"
@@ -112,6 +105,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mt-2 space-y-1 text-justify text-[14px] md:text-[15px] lg:text-base"
           >
+
             {(t("about.offers", { returnObjects: true }) as string[]).map((item: string, idx: number) => (
               <li key={idx} className="flex gap-2">
                 <IoCheckmark className="shrink-0 text-[#e94629]" />
@@ -142,7 +136,6 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Divider */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -151,7 +144,6 @@ export default function Home() {
           className="mt-12 hidden h-[500px] w-[1px] bg-black md:block"
         />
 
-        {/* Image collage */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -160,7 +152,7 @@ export default function Home() {
           className="relative mt-12 ml-4 flex flex-col items-center justify-center gap-4 xl:flex-col"
         >
           <Image
-            src="/assets/pictures/image-3.jpg"
+            src="/assets/pictures/image-12.jpg"
             alt="Banner"
             width={1000}
             height={1000}
@@ -176,7 +168,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Activities Section */}
       <section className="mt-24 w-full gap-24 px-4 pb-36 md:px-12 lg:px-24">
         <p className={`${PoppinsSemiBold.className} text-center text-2xl md:text-3xl`}>
           {t("activities.title")}

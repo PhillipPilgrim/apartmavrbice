@@ -23,7 +23,8 @@ const en = {
 			"Own kitchenette – Ideal for preparing meals during your stay.",
 			"Free Wi‑Fi – Stay online for work or entertainment.",
 			"Close to nature – A great starting point for trips and relaxation.",
-			"Entertainment - You can rent a scooter, paddleboard or electric kick scooter."
+			"Entertainment - You can rent a scooter, paddleboard or electric kick scooter.",
+			"Massages - Massages can be booked for the apartment by calling 603 877 639.",
 		],
 		whyTitle: "Why Choose Apartments Vrbice:",
 		reasons: [
@@ -35,9 +36,9 @@ const en = {
 		],
 		tv: "Flat-screen TV",
 		wifi: "Free Wi-Fi",
-		kitchen: "Kitchen with oven",
-		parking: "Free parking",
-		bathroom: "Bathroom with bathtub",
+		kitchen: "Kitchen room",
+		parking: "Free parking under security camera system",
+		bathroom: "Personal bathroom",
 		smoking: "Non-smoking rooms",
 		reserve:
 			"Book your stay today and experience a combination of comfort, tranquility, and an excellent location at Apartments Vrbice!",
@@ -88,11 +89,17 @@ const en = {
 		description:
 			"<p><strong>Apartments Vrbice</strong> is located in Bohumín and offers free Wi‑Fi, free private parking, and garden views. Ostrava main station is 6.5 km away.</p>" +
 			"<p><strong>All units feature a seating area</strong> with a sofa bed, a flat‑screen TV with cable channels, a well‑equipped kitchen with a dining area, and a private bathroom with free toiletries. <strong>A refrigerator, oven, microwave, and kettle are also available.</strong></p>" +
-			"<p>The national cultural monument Dolní oblast Vítkovice is 13 km away and ZOO Ostrava is 8.1 km away. <strong>Leoš Janáček Ostrava Airport is 29 km away.</strong></p>",
+			"<p>The national cultural monument Dolní oblast Vítkovice is 13 km away and ZOO Ostrava is 8.1 km away. <strong>Leoš Janáček Ostrava Airport is 29 km away.</strong></p>" +
+			"<p>The apartments also offer <strong>a garden seating area with a pergola</strong> and also a grill and fireplace and <strong>a children's playground.</strong></p>",
 		oneBedroom: {
 			title: "One-Bedroom Apartment",
 			description: "We offer accommodation in beautiful apartments located in a quiet part of Bohumín.",
-			features: ["Bedroom: 2 single beds", "Living room: Sofa bed", "Apartment size: 45m²", "Comfortable beds"],
+			features: [
+				"Living area with sofa bed",
+				"Bedroom: 2 single beds",
+				"Apartment size: 45m²",
+				"Comfortable beds",
+			],
 		},
 		equipment: {
 			title: "Equipment of apartments",
@@ -101,17 +108,24 @@ const en = {
 			title: "Deluxe Apartment",
 			description: "We offer accommodation in beautiful apartments located in a quiet part of Bohumín.",
 			features: [
-				"Living room: Sofa bed",
+				"Living area with sofa bed",
 				"First bedroom: 2 single beds",
 				"Second bedroom: 2 single beds",
 				"Apartment size: 65 m²",
 				"Comfortable beds",
 			],
 		},
+		//* Rozkládací pohovka je v jednom pokoji *//
 		vpriprav: {
-			title: "In Preparation",
+			title: "Premium Apartment",
 			description: "We offer accommodation in beautiful apartments located in a quiet part of Bohumín.",
-			features: ["In preparation"],
+			features: [
+				"Living area with sofa bed",
+				"First bedroom: 2 single beds",
+				"Second bedroom: 2 single beds",
+				"Apartment size: 58 m²",
+				"Premium beds",
+			],
 		},
 		package: {
 			title: "Stay Package “Relax at Vrbice”",
