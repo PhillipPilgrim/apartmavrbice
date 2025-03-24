@@ -1,7 +1,7 @@
 const en = {
 	navbar: {
 		home: "Apartments",
-		rezervace: "Booking",
+		rezervace: "Booking.com",
 		jazyk: "Language",
 		cz: "Czech",
 		en: "English",
