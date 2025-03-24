@@ -32,8 +32,8 @@ const cs = {
 			"Snadné parkování – Pohodlné parkování přímo u apartmánu.",
 			"Klid a soukromí – Užijte si pobyt daleko od městského ruchu, a přitom na dosah všech důležitých míst.",
 			"Blízkost aktivit – Kousek od přírody, městských center i kulturních památek.",
-			"Ideální poloha: Apartmá Vrbice se nachází přímo u dálnice D1, mezi Ostravou a Bohumínem – ideální volba pro ty, kteří hledají pohodlí a rychlou dostupnost.",
-			"Čistota - Možnost si u nás vyprat také prádlo v prádelně.",
+			"Ideální poloha - Apartmá Vrbice se nachází přímo u dálnice D1, mezi Ostravou a Bohumínem – ideální volba pro ty, kteří hledají pohodlí a rychlou dostupnost.",
+			"Při delším pobytu možnost praní viz více informací na místě.",
 		],
 		reserve:
 			"Rezervujte si svůj pobyt ještě dnes a zažijte kombinaci komfortu, klidu a skvělé polohy v Apartmá Vrbice!",
