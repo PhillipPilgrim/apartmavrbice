@@ -144,10 +144,8 @@ const en = {
 		},
 	},
 	error: {
-		title: "Stránka nenalezena",
+		title: "Page not found",
 		num: "404",
-		description:
-			"Omlouváme se, ale stránka, kterou hledáte, nebyla nalezena. Zkontrolujte prosím URL adresu a zkuste to znovu.",
 	},
 };
 

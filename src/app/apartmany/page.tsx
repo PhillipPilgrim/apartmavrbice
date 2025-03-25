@@ -17,7 +17,7 @@ import {
   IoAlbums,
 } from "react-icons/io5";
 
-import { PoppinsSemiBold, PoppinsRegular, PoppinsMedium } from "@/lib/fonts";
+import { PoppinsSemiBold, PoppinsRegular} from "@/lib/fonts";
 import { CISLO } from "@/utils/constant";
 
 

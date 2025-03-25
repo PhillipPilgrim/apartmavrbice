@@ -1,12 +1,22 @@
 "use client"
 
-import { PoppinsSemiBold } from "@/lib/fonts";
+import { PoppinsSemiBold, PoppinsRegular } from "@/lib/fonts";
+
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 
 export default function NotFound() {
     const { t } = useTranslation();
+      const [mounted, setMounted] = useState(false);
+    
+
+     useEffect(() => {
+        setMounted(true);
+      }, []);
+    
+      if (!mounted) return null;
 
     return (
         <section className="relative flex min-h-screen w-full flex-col items-center justify-center">
@@ -30,7 +40,7 @@ export default function NotFound() {
               {t("error.num")}
             </p>
             <p
-              className={`text-center text-3xl text-[#e94629] lg:text-5xl ${PoppinsSemiBold.className}`}
+              className={`text-center text-3xl text-[#e94629] lg:text-5xl ${PoppinsRegular.className}`}
             >
               {t("error.title")}
             </p>

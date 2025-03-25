@@ -144,8 +144,6 @@ const cs = {
 	error: {
 		title: "Stránka nenalezena",
 		num: "404",
-		description:
-			"Omlouváme se, ale stránka, kterou hledáte, nebyla nalezena. Zkontrolujte prosím URL adresu a zkuste to znovu.",
 	},
 };
 
