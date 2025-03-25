@@ -43,6 +43,11 @@ export default function NavbarExport() {
 		};
 	}, []);
 
+	const changeLanguageAndReload = (language: string) => {
+		i18n.changeLanguage(language);  // Change the language
+		window.location.reload();  // Reload the page to apply the language change
+	  };
+
 	const toggleDropdown = () => setIsOpen(!isOpen);
 	const changeLanguage = (lng: string) => {
 		i18n.changeLanguage(lng);
@@ -70,12 +75,13 @@ export default function NavbarExport() {
 					</motion.a>
 
 					<div ref={dropdownRef} className="relative flex w-full items-center justify-center lg:w-auto">
-						<motion.span
+						<motion.button
 							initial={{ opacity: 0, x: 30 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.5, delay: 0.4 }}
 							onClick={toggleDropdown}
 							aria-expanded={isOpen}
+							role="menu"
 							className="flex w-40 cursor-pointer items-center px-4 py-2 font-[family-name:var(--font-coahce-regular)] text-sm font-bold text-[#e94629] lg:text-base"
 						>
 							<div className="flex items-center gap-1.5">
@@ -89,7 +95,7 @@ export default function NavbarExport() {
 							>
 								<IoArrowDown />
 							</motion.div>
-						</motion.span>
+						</motion.button>
 
 						<AnimatePresence>
 							{isOpen && (
@@ -101,7 +107,7 @@ export default function NavbarExport() {
 									className="absolute top-full z-10 mb-2 w-full rounded-xl bg-zinc-300/20 p-2 text-black shadow-md"
 								>
 									<button
-										onClick={() => changeLanguage("cs")}
+										onClick={() => changeLanguageAndReload("cs")}
 										className="flex cursor-pointer items-center justify-start gap-2 transition-all duration-300 hover:scale-105"
 									>
 										<Image
@@ -117,7 +123,7 @@ export default function NavbarExport() {
 									</button>
 
 									<button
-										onClick={() => changeLanguage("en_us")}
+										onClick={() => changeLanguageAndReload("en_us")}
 										className="flex cursor-pointer items-center justify-start gap-2 transition-all duration-300 hover:scale-105"
 									>
 										<Image
@@ -192,7 +198,14 @@ export default function NavbarExport() {
 					transition={{ duration: 0.5, delay: 0.4 }}
 				>
 					<Link href="/" className={`flex items-center gap-2 ${isMobileMenuOpen ? "hidden" : ""}`}>
-						<Image src="/assets/logo.png" alt="Logo" width={200} height={200} />
+						<Image
+							src="/assets/logo.png"
+							alt="Logo"
+							priority
+							style={{ width: "auto", height: "auto" }}
+							width={140}
+							height={140}
+						/>
 					</Link>
 				</motion.div>
 			</motion.nav>
@@ -209,7 +222,14 @@ export default function NavbarExport() {
 						<div className="flex h-full flex-col px-4 py-6">
 							<div className="flex items-center justify-between">
 								<Link href="/" className="flex flex-row items-center gap-2">
-									<Image src="/assets/logo.png" alt="Logo" width={200} height={200} />
+									<Image
+										src="/assets/logo.png"
+										alt="Logo"
+										priority
+										style={{ width: "auto", height: "auto" }}
+										width={140}
+										height={140}
+									/>
 								</Link>
 
 								<button onClick={toggleMobileMenu}>
@@ -257,8 +277,8 @@ export default function NavbarExport() {
 										initial={{ opacity: 0, x: -30 }}
 										animate={{ opacity: 1, x: 0 }}
 										transition={{ duration: 0.5, delay: 0.7 }}
-										onClick={() => changeLanguage("cs")}
-										className="flex cursor-pointer items-center justify-start gap-2 transition-none focus:duration-300 focus:transition-transform focus:scale-115"
+										onClick={() => changeLanguageAndReload("cs")}
+										className="flex cursor-pointer items-center justify-start gap-2 "
 									>
 										<Image
 											src={"/assets/czech-flag.png"}
@@ -273,8 +293,8 @@ export default function NavbarExport() {
 										initial={{ opacity: 0, x: 30 }}
 										animate={{ opacity: 1, x: 0 }}
 										transition={{ duration: 0.5, delay: 0.7 }}
-										onClick={() => changeLanguage("en_us")}
-										className="flex cursor-pointer items-center justify-start gap-2 transition-none focus:duration-300 focus:transition-transform focus:scale-115"
+										onClick={() => changeLanguageAndReload("en_us")}
+										className="flex cursor-pointer items-center justify-start gap-2"
 									>
 										<Image
 											src={"/assets/english-flag.png"}
@@ -293,7 +313,7 @@ export default function NavbarExport() {
 										transition={{ duration: 0.5, delay: 1 }}
 										whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
 										href={`tel:${CISLO}`}
-										className="flex w-full items-center justify-center rounded-lg border-2 border-[#e94629] bg-black/70 p-1 text-[#e94629] transition-none focus:duration-300 focus:transition-transform focus:scale-110"
+										className="flex w-full items-center justify-center rounded-lg border-2 border-[#e94629] bg-black/70 p-1 text-[#e94629] transition-none focus:scale-110 focus:transition-transform focus:duration-300"
 									>
 										<IoCallOutline className="p-1 text-4xl" />
 										<span className="ml-2 text-lg">731 155 158</span>

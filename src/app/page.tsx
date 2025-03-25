@@ -54,7 +54,7 @@ export default function Home() {
             className="flex items-center gap-4"
           >
             <p
-              className={`text-center text-3xl text-white md:text-5xl lg:text-7xl ${PoppinsSemiBold.className}`}
+              className={`text-center text-4xl text-white lg:text-7xl ${PoppinsSemiBold.className}`}
             >
               {t("banner.title")}
             </p>
@@ -202,6 +202,7 @@ export default function Home() {
                   }.jpg`}
                   alt="Banner"
                   fill
+                  sizes="100%"
                   style={{ objectFit: "cover" }}
                   className="rounded-t-lg"
                 />

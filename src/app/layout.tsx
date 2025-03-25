@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 	description:
 		"Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost? Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem. Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!",
 	applicationName: "Apartmá Vrbice",
-	keywords: ["apartman vrbice", "apartma", "vrbice", "ostrava apartma", "apartmán", "pronájem apartmánu ostrava"],
+	keywords: ["apartma vrbice", "apartma", "vrbice", "ostrava apartma", "apartmá", "pronájem apartmá ostrava"],
 	generator: "Next.js",
 	twitter: {
 		card: "summary",

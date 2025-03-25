@@ -24,7 +24,7 @@ const cs = {
 			"Wi‑Fi zdarma – Zůstaňte online pro práci nebo zábavu.",
 			"Blízko přírody – Skvělý výchozí bod pro výlety a relaxaci.",
 			"Zábava - U nás je i možnost pronajmout si skůtr, paddleboard nebo elektrickou koloběžku.",
-			"Masáže - Na apartmán je možné si objednat i masáž na tel. čísle 603 877 639.",
+			"Masáže - Na apartmán je možné si objednat masáž na tel. čísle 603 877 639.",
 		],
 		whyTitle: "Proč zvolit Apartma Vrbice:",
 		reasons: [
@@ -140,6 +140,12 @@ const cs = {
 			priceRegular: "Běžná cena bez akčního balíčku: 6 380 Kč",
 			reservation: "Máte-li zájem využívejte rezervace skrze telefon:",
 		},
+	},
+	error: {
+		title: "Stránka nenalezena",
+		num: "404",
+		description:
+			"Omlouváme se, ale stránka, kterou hledáte, nebyla nalezena. Zkontrolujte prosím URL adresu a zkuste to znovu.",
 	},
 };
 

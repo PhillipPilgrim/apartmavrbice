@@ -83,6 +83,8 @@ export default function FooterExport() {
 								alt="Logo partnera"
 								width={120}
 								height={120}
+								priority
+								style={{ width: "auto", height: "auto" }}
 								className="cursor-pointer transition-transform hover:scale-105"
 							/>
 						</a>
@@ -92,6 +94,8 @@ export default function FooterExport() {
 								alt="Logo partnera"
 								width={120}
 								height={120}
+								priority
+								style={{ width: "auto", height: "auto" }}
 								className="cursor-pointer transition-transform hover:scale-105"
 							/>
 						</a>
@@ -101,6 +105,8 @@ export default function FooterExport() {
 								alt="Logo partnera"
 								width={120}
 								height={120}
+								priority
+								style={{ width: "auto", height: "auto" }}
 								className="cursor-pointer transition-transform hover:scale-105"
 							/>
 						</a>
@@ -114,6 +120,8 @@ export default function FooterExport() {
 								alt="Logo partnera"
 								width={120}
 								height={120}
+								priority
+								style={{ width: "auto", height: "auto" }}
 								className="cursor-pointer transition-transform hover:scale-105"
 							/>
 						</a>
