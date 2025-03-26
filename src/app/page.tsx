@@ -153,15 +153,17 @@ export default function Home() {
 					<Image
 						src="/assets/pictures/image-12.jpg"
 						alt="Banner"
-						width={1000}
-						height={1000}
+						width={100}
+						height={100}
+            sizes="100%"
 						className="h-full w-fit shadow-lg md:w-md"
 					/>
 					<Image
 						src="/assets/pictures/image-5.jpg"
 						alt="Banner"
-						width={1000}
-						height={1000}
+						width={100}
+						height={100}
+            sizes="100%"
 						className="h-full w-fit shadow-lg md:ml-10 md:w-md"
 					/>
 				</motion.div>
