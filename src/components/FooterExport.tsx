@@ -134,6 +134,21 @@ export default function FooterExport() {
 								className="cursor-pointer transition-transform hover:scale-105"
 							/>
 						</a>
+						<a
+							href="https://www.zivefirmy.cz/apartma-vrbice_f1835043?loc=1"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Image
+								src="/assets/firma.png"
+								alt="Logo partnera"
+								width={80}
+								height={80}
+								priority
+								style={{ width: "auto", height: "auto" }}
+								className="cursor-pointer transition-transform hover:scale-105"
+							/>
+						</a>
 					</div>
 				</div>
 			</div>

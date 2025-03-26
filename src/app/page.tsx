@@ -132,15 +132,6 @@ export default function Home() {
 							)}
 						</ul>
 						<p className={`${PoppinsSemiBold.className} mt-4 text-[#e94629]`}>{t("about.reserve")}</p>
-						<div className="relative">
-							<Image
-								src="/assets/firma.png"
-								alt="Banner"
-								width={100}
-								height={100}
-								className="absolute -top-10 -right-20"
-							/>
-						</div>
 					</motion.div>
 				</motion.div>
 
