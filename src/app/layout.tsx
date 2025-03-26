@@ -15,7 +15,7 @@ import NavbarExport from "@/components/NavbarExport";
 import FooterExport from "@/components/FooterExport";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.apartmavrbice.cz"),
+	metadataBase: new URL("https://www.apartmavrbice.cz"),
 	title: "Apartmá Vrbice",
 	description:
 		"Hledáte místo, kde si odpočinete v klidu, ale zároveň oceníte skvělou dopravní dostupnost? Apartmá Vrbice se nachází v ideální lokalitě přímo u dálnice mezi Ostravou a Bohumínem. Perfektní volba pro cestovatele, pracovní pobyty i delší dovolené!",
@@ -145,7 +145,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={` ${PoppinsThin.className} ${PoppinsExtraLight.className} ${PoppinsLight.className} ${PoppinsRegular.className} ${PoppinsMedium.className} ${PoppinsSemiBold.className} ${PoppinsBold.className} ${PoppinsExtraBold.className} ${PoppinsBlack.className} antialiased bg-[#f0f0f0]`}
+				className={` ${PoppinsThin.className} ${PoppinsExtraLight.className} ${PoppinsLight.className} ${PoppinsRegular.className} ${PoppinsMedium.className} ${PoppinsSemiBold.className} ${PoppinsBold.className} ${PoppinsExtraBold.className} ${PoppinsBlack.className} bg-[#f0f0f0] antialiased`}
 			>
 				<NavbarExport />
 				{children}

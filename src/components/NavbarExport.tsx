@@ -44,9 +44,9 @@ export default function NavbarExport() {
 	}, []);
 
 	const changeLanguageAndReload = (language: string) => {
-		i18n.changeLanguage(language);  // Change the language
-		window.location.reload();  // Reload the page to apply the language change
-	  };
+		i18n.changeLanguage(language); // Change the language
+		window.location.reload(); // Reload the page to apply the language change
+	};
 
 	const toggleDropdown = () => setIsOpen(!isOpen);
 	const changeLanguage = (lng: string) => {
@@ -278,7 +278,7 @@ export default function NavbarExport() {
 										animate={{ opacity: 1, x: 0 }}
 										transition={{ duration: 0.5, delay: 0.7 }}
 										onClick={() => changeLanguageAndReload("cs")}
-										className="flex cursor-pointer items-center justify-start gap-2 "
+										className="flex cursor-pointer items-center justify-start gap-2"
 									>
 										<Image
 											src={"/assets/czech-flag.png"}

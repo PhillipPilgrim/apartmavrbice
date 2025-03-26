@@ -26,17 +26,17 @@ const cs = {
 			"Zábava - U nás je i možnost pronajmout si skůtr, paddleboard nebo elektrickou koloběžku.",
 			"Masáže - Na apartmán je možné si objednat masáž na tel. čísle 603 877 639.",
 		],
-		whyTitle: "Proč zvolit Apartma Vrbice:",
+		whyTitle: "Proč zvolit Apartmá Vrbice:",
 		reasons: [
 			"Strategická poloha – Perfektní spojení mezi Ostravou a Bohumínem, s rychlým přístupem na dálnici.",
 			"Snadné parkování – Pohodlné parkování přímo u apartmánu.",
 			"Klid a soukromí – Užijte si pobyt daleko od městského ruchu, a přitom na dosah všech důležitých míst.",
 			"Blízkost aktivit – Kousek od přírody, městských center i kulturních památek.",
 			"Ideální poloha - Apartmá Vrbice se nachází přímo u dálnice D1, mezi Ostravou a Bohumínem – ideální volba pro ty, kteří hledají pohodlí a rychlou dostupnost.",
-			"Při delším pobytu možnost praní viz více informací na místě.",
+			"Při delším pobytu možnost praní viz. více informací na místě.",
 		],
 		reserve:
-			"Rezervujte si svůj pobyt ještě dnes a zažijte kombinaci komfortu, klidu a skvělé polohy v Apartmá Vrbice!",
+			"Rezervujte si svůj pobyt ještě dnes a zažijte kombinaci komfortu, klidu a skvělé pohody v Apartmá Vrbice!",
 		tv: "TV s plochou obrazovkou",
 		wifi: "Wi-Fi zdarma",
 		kitchen: "Kuchyňský kout",
@@ -88,10 +88,10 @@ const cs = {
 	apartments: {
 		title: "Naše apartmány",
 		description:
-			"<p><strong>Apartmá Vrbice se</strong> nachází v Bohumíně a nabízí bezplatné Wi‑Fi, neplacené soukromé parkoviště a výhled do zahrady. Ostrava hlavní nádraží se nachází 6,5 km odtud.</p>" +
-			"<p><strong>Všechny ubytovací jednotky mají posezení</strong> s rozkládací pohovkou, TV s plochou obrazovkou s kabelovými programy, kuchyň s dobrým vybavením a jídelní částí a vlastní koupelnu s bezplatnými toaletními potřebami. <strong>K dispozici je také lednice, trouba, mikrovlnná trouba a varná konvice.</strong></p>" +
-			"<p>Národní kulturní památka Dolní oblast Vítkovice se nachází 13 km od ubytování Apartmá Vrbice a ZOO Ostrava 8,1 km. <strong>Letiště Leoše Janáčka Ostrava leží 29 km daleko.</strong></p>" +
-			"<p>Apartmány také nabízí <strong>posezení na zahradě spolu s pergolou</strong>, grilem i ohništěm a <strong>dětským hřištěm.</strong></p>",
+			"<p><strong>Apartmá Vrbice se</strong> nachází v Bohumíně a nabízí bezplatnou Wi‑Fi, neplacené soukromé parkoviště a výhled do zahrady. </p>" +
+			"<p><strong>Všechny ubytovací jednotky mají posezení</strong> s rozkládací pohovkou, TV s plochou obrazovkou a kabelovými programy, kuchyň včetně jídelní části a vlastní koupelnu s bezplatnými toaletními potřebami. <strong>K dispozici je také lednice, trouba, mikrovlnná trouba a varná konvice.</strong></p>" +
+			"<p>Národní kulturní památka Dolní oblast Vítkovice je vzdálená 13 km od ubytování a ZOO Ostrava 8,1 km. <strong>Ostrava hlavní nádraží se nachází 6,5 km od pobytu a Letiště Leoše Janáčka Ostrava leží 29 km od pobytu.</strong></p>" +
+			"<p>Apartmány také nabízí <strong>posezení na zahradě spolu s pergolou</strong>, grilem, ohništěm a <strong>dětským hřištěm.</strong></p>",
 		oneBedroom: {
 			title: "Apartmá s 1 ložnicí",
 			description: "Pro krátké výlety nebo pracovní cesty. Ideální pro páry i jednotlivce.",
@@ -102,7 +102,7 @@ const cs = {
 			],
 		},
 		equipment: {
-			title: "Vybavení apartmánů",
+			title: "Vybavení apartmánu",
 		},
 		deluxe: {
 			title: "Apartmá Deluxe",
@@ -129,7 +129,7 @@ const cs = {
 			title: "Pobytový balíček „Relax ve Vrbici“",
 			description: "Co balíček zahrnuje:",
 			details: [
-				"Ubytování na 3 noci pro 2 osoby v Apartmán s 1 ložnicí",
+				"Ubytování na 3 noci pro 2 osoby v Apartmá s 1 ložnicí",
 				"Relaxační masáž pro dva (60 minut/osoba)",
 				"20% sleva na jednu z aktivit:",
 				"Vstup do Zoo Ostrava",
@@ -138,7 +138,7 @@ const cs = {
 			],
 			priceDiscounted: "Cena balíčku po slevě: 5 242 Kč",
 			priceRegular: "Běžná cena bez akčního balíčku: 6 380 Kč",
-			reservation: "Máte-li zájem využívejte rezervace skrze telefon:",
+			reservation: "Máte-li zájem využijte rezervace skrze telefon:",
 		},
 	},
 	error: {

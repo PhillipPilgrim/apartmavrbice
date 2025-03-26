@@ -1,6 +1,6 @@
 "use client";
 
-import { IoLogoFacebook, IoBookmarks } from "react-icons/io5";
+import { IoLogoFacebook, IoBookmarks, IoLogoInstagram } from "react-icons/io5";
 import { EMAIL, CISLO, CISLO2 } from "@/utils/constant";
 import { useTranslation } from "react-i18next";
 import { PoppinsSemiBold } from "@/lib/fonts";
@@ -31,6 +31,15 @@ export default function FooterExport() {
 						>
 							<IoLogoFacebook className="text-2xl" />
 							<span className="text-md">Facebook</span>
+						</a>
+						<a
+							href="https://www.instagram.com/apartmavrbice/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:text-[#fd044d]"
+						>
+							<IoLogoInstagram className="text-2xl" />
+							<span className="text-md">Instagram</span>
 						</a>
 						<a
 							href="https://www.booking.com/Share-mz7jvW"
@@ -67,7 +76,7 @@ export default function FooterExport() {
 							• {CISLO}
 						</a>
 						<a href={`tel:${CISLO2}`} className="text-md text-zinc-800 transition-all hover:text-[#e94629]">
-						• {CISLO2}
+							• {CISLO2}
 						</a>
 						<p className="text-md text-zinc-800"> • Ostravská 83, Bohumín, Vrbice</p>
 						<p className="text-md text-zinc-800"> • Ban.účet 1761182042/3030</p>
