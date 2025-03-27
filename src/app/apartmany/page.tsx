@@ -270,6 +270,7 @@ export default function Apartmany() {
 								onClick={() => setActiveSlideshow("oneBedroom")}
 								src="/assets/pictures/image-5.jpg"
 								alt="apartmany"
+								priority
 								width={400}
 								height={400}
 								className="h-fit w-fit cursor-pointer rounded-lg"

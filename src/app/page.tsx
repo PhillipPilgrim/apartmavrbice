@@ -155,7 +155,7 @@ export default function Home() {
 						alt="Banner"
 						width={100}
 						height={100}
-            sizes="100%"
+						sizes="100%"
 						className="h-full w-fit shadow-lg md:w-md"
 					/>
 					<Image
@@ -163,7 +163,7 @@ export default function Home() {
 						alt="Banner"
 						width={100}
 						height={100}
-            sizes="100%"
+						sizes="100%"
 						className="h-full w-fit shadow-lg md:ml-10 md:w-md"
 					/>
 				</motion.div>

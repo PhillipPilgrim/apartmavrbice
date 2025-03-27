@@ -43,15 +43,12 @@ export default function NavbarExport() {
 		};
 	}, []);
 
-	const changeLanguageAndReload = (language: string) => {
-		i18n.changeLanguage(language); // Change the language
-		window.location.reload(); // Reload the page to apply the language change
+	const changeLanguageAndReload = (lng: string) => {
+		i18n.changeLanguage(lng);
+		window.location.reload();
 	};
 
 	const toggleDropdown = () => setIsOpen(!isOpen);
-	const changeLanguage = (lng: string) => {
-		i18n.changeLanguage(lng);
-	};
 
 	if (!mounted) return null;
 

@@ -2,8 +2,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 
-import en from "../locals/en";
-import cs from "../locals/cs";
+import en from "@/locals/en";
+import cs from "@/locals/cs";
 
 const isServer = typeof window === "undefined";
 const detectionOptions = {
@@ -22,7 +22,7 @@ i18n.init({
 		en_us: { translation: en },
 		cs: { translation: cs },
 	},
-	supportedLngs: ["en_us", "cs"],
+	supportedLngs: ["en", "en_us", "cs"],
 	fallbackLng: "cs",
 	debug: false,
 	detection: detectionOptions,
