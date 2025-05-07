@@ -72,7 +72,7 @@ export default function NavbarExport() {
 					</motion.a>
 
 					<div ref={dropdownRef} className="relative flex w-full items-center justify-center lg:w-auto">
-						<motion.button
+						<motion.div
 							initial={{ opacity: 0, x: 30 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.5, delay: 0.4 }}
@@ -92,7 +92,7 @@ export default function NavbarExport() {
 							>
 								<IoArrowDown />
 							</motion.div>
-						</motion.button>
+						</motion.div>
 
 						<AnimatePresence>
 							{isOpen && (

@@ -383,7 +383,7 @@ export default function Apartmany() {
 					</motion.div>
 				</section>
 
-				<section className="pt-8 pb-12">
+				<section className="flex flex-row pt-8 pb-12">
 					<div className="flex w-full flex-col items-start justify-center gap-12 md:flex-row">
 						<motion.div
 							initial={{ opacity: 0, y: 50 }}
@@ -391,34 +391,17 @@ export default function Apartmany() {
 							transition={{ duration: 0.5, delay: 0.4 }}
 							className="flex flex-col items-center justify-center gap-8 rounded-md bg-zinc-300/85 p-3"
 						>
-							<div className="flex flex-col items-start justify-center">
-								<h1 className={`${PoppinsSemiBold.className} mb-6 text-3xl text-[#e94629]`}>
-									{t("apartments.package.title")}
-								</h1>
-								<p className={`${PoppinsSemiBold.className} mb-4 w-80 text-lg`}>
-									{t("apartments.package.description")}
-								</p>
-								<ul className="ml-6 list-disc">
-									{(t("apartments.package.details", { returnObjects: true }) as string[]).map(
-										(detail: string, index: number) => (
-											<li key={index}>{detail}</li>
-										),
-									)}
-								</ul>
-
-								<p className="mt-4 text-lg">
-									<strong>{t("apartments.package.priceDiscounted")}</strong>
-								</p>
-								<p className="text-sm">{t("apartments.package.priceRegular")}</p>
-								<p className="mt-4">
-									<strong>
-										{t("apartments.package.reservation")}{" "}
-										<a href={`tel:${CISLO}`} className="text-[#e94629]">
-											{CISLO}
-										</a>
-									</strong>
-								</p>
-							</div>
+							<Image src="/assets/pictures/kupon-1.jpeg" alt="Kupón" width={400} height={400} />
+						</motion.div>
+					</div>
+					<div className="flex w-full flex-col items-start justify-center gap-12 md:flex-row">
+						<motion.div
+							initial={{ opacity: 0, y: 50 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 0.4 }}
+							className="flex flex-col items-center justify-center gap-8 rounded-md bg-zinc-300/85 p-3"
+						>
+							<Image src="/assets/pictures/kupon-2.jpeg" alt="Kupón" width={400} height={400} />
 						</motion.div>
 					</div>
 				</section>
